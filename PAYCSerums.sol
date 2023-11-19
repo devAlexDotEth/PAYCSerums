@@ -58,7 +58,7 @@ contract PAYCSerums is Initializable, ERC1155Upgradeable, OwnableUpgradeable, ER
 
     function burnMutantsAndGetSerum(uint256[] memory mutantIds) public {
         require(mutantIds.length == 5, "Exactly 5 mutants required");
-        IERC721 PAYCMutants = IERC721(0x06F832645dc8D1069727C5FA28fFEf651f4d2120);
+        IERC721 PAYCMutants = IERC721(0x0802f7a7c48426E972a30aAaB3C2f35c14a35Bc8);
         for (uint256 i = 0; i < mutantIds.length; i++) {
             // Ensure the caller owns the mutant they wish to burn
             require(PAYCMutants.ownerOf(mutantIds[i]) == msg.sender, "Caller does not own this mutant");
