@@ -51,7 +51,7 @@ contract PAYCSerums is Initializable, ERC1155Upgradeable, OwnableUpgradeable, ER
     function purchaseSerum(uint256 serumAmount) public {
         require(serumAmount > 0 && serumAmount <= 200, "Invalid serum amount");
         uint256 price = serumAmount * costPerSerum;
-        AuraDropERC20 sheeshToken = AuraDropERC20(0x64C061c5BcA63f017Cd6bA3B26101965b6b0c0aC);
+        AuraDropERC20 sheeshToken = AuraDropERC20(0xbB4f3aD7a2cf75d8EfFc4f6D7BD21d95F06165ca);
         require(sheeshToken.transferFrom(msg.sender, address(this), price), "Transfer failed");
         _mint(msg.sender, 1, serumAmount, "");  // Assume serum id is 1
     }
